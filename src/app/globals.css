@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: Georgia, serif;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent/15 text-accent-dark;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/55 ring-offset-2 ring-offset-canvas;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-6 lg:px-10;
+  }
+
+  /* Small uppercase label that sits above section titles. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-2xs font-semibold uppercase tracking-eyebrow text-accent;
+  }
+
+  .display {
+    @apply font-display font-normal leading-[1.04] tracking-[-0.015em];
+  }
+
+  .hairline {
+    @apply h-px w-full bg-line;
+  }
+
+  /* Photo frame: clips the image so it can scale on hover without shifting layout. */
+  .photo {
+    @apply relative overflow-hidden bg-sand;
+  }
+  .photo img {
+    @apply h-full w-full object-cover transition-transform duration-[900ms] ease-creatourzz;
+  }
+  .group:hover .photo img {
+    @apply scale-[1.05];
+  }
+
+  /* Legibility scrim for text laid over photography. */
+  .scrim {
+    background: linear-gradient(
+      to top,
+      rgba(10, 13, 16, 0.86) 0%,
+      rgba(10, 13, 16, 0.55) 32%,
+      rgba(10, 13, 16, 0.12) 62%,
+      rgba(10, 13, 16, 0) 100%
+    );
+  }
+
+  .scrim-soft {
+    background: linear-gradient(to top, rgba(10, 13, 16, 0.7) 0%, rgba(10, 13, 16, 0.08) 65%, transparent 100%);
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-sand;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-surface px-4 py-3 text-[0.9375rem] text-ink
+           placeholder:text-ink-faint transition-colors duration-200
+           hover:border-line-strong focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+  }
+
+  .field-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  .link-quiet {
+    @apply text-ink-soft transition-colors duration-200 hover:text-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Hide scrollbar on horizontal rails while keeping them scrollable. */
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, #000 85%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 85%, transparent 100%);
+  }
+}
