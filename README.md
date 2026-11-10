@@ -44,11 +44,14 @@ image pipeline — most of what makes it an application.
 Use GitHub as the source of truth and a host that runs Next.js. **Vercel** is the
 straightforward choice: same team as Next.js, no configuration, free Hobby tier.
 
+This repository lives at
+**[github.com/Mahima1810/CREATOURZZ](https://github.com/Mahima1810/CREATOURZZ)**. Day to
+day, publishing a change is just:
+
 ```bash
-git init && git add -A && git commit -m "CREATOURZZ"
-git branch -M main
-git remote add origin https://github.com/<you>/<repo>.git
-git push -u origin main
+git add -A
+git commit -m "what changed"
+git push
 ```
 
 Then at [vercel.com/new](https://vercel.com/new), import the repository. Vercel detects
