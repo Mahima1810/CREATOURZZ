@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { X, CalendarDays, MapPin } from 'lucide-react';
 import type { Package } from '@/lib/types';
 import { inr, duration } from '@/lib/format';
+import { priceBasisShort, PRICING_NOTE } from '@/lib/pricing';
 import { EnquiryForm } from './EnquiryForm';
 
 export function EnquiryDialog({
@@ -123,18 +124,13 @@ export function EnquiryDialog({
                   </span>
                 </div>
                 <p className="mt-3 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-line pt-3">
-                  <span className="font-display text-2xl">
-                    {inr(
-                      pkg.tiers?.find((t) => t.name === initialTier)?.pricePerPerson ?? pkg.pricePerPerson,
-                    )}
-                  </span>
+                  <span className="font-display text-2xl">{inr(pkg.price)}</span>
                   <span className="text-2xs text-ink-mute">
-                    per person ·{' '}
-                    {pkg.tiers?.length
-                      ? `${initialTier ?? pkg.tiers[0].name} tier · indicative`
-                      : 'sample pricing'}
+                    {priceBasisShort(pkg)}
+                    {initialTier ? ` · ${initialTier} tier` : ''}
                   </span>
                 </p>
+                <p className="mt-2 text-2xs leading-relaxed text-ink-mute">{PRICING_NOTE}</p>
               </div>
             }
           />

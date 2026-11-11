@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import { InstagramGlyph, XGlyph, FacebookGlyph, LinkedInGlyph } from './SocialIcons';
+import { Mail } from 'lucide-react';
 import { Logo } from './Logo';
+import { CONTACT_EMAIL, CONTACT_MAILTO, CUSTOM_TOUR_HEADLINE } from '@/lib/contact';
 
 const explore = [
   { href: '/destinations', label: 'Explore Destinations' },
@@ -21,13 +21,6 @@ const legal = [
   { href: '/privacy', label: 'Privacy Policy' },
 ];
 
-const socials = [
-  { href: '/contact', label: 'Instagram', Icon: InstagramGlyph },
-  { href: '/contact', label: 'X', Icon: XGlyph },
-  { href: '/contact', label: 'Facebook', Icon: FacebookGlyph },
-  { href: '/contact', label: 'LinkedIn', Icon: LinkedInGlyph },
-];
-
 export function Footer() {
   return (
     <footer className="mt-24 bg-ink text-white/70">
@@ -40,18 +33,6 @@ export function Footer() {
               first.
             </p>
             <p className="mt-6 font-display text-lg text-white/85">Discover More. Travel Better.</p>
-            <div className="mt-6 flex gap-2.5">
-              {socials.map(({ href, label, Icon }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  aria-label={`${label} — demo link, routes to Contact`}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors duration-300 hover:border-white/40 hover:bg-white/10 hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </Link>
-              ))}
-            </div>
           </div>
 
           <FooterColumn title="Explore" links={explore} />
@@ -59,29 +40,23 @@ export function Footer() {
 
           <div>
             <h3 className="text-2xs font-semibold uppercase tracking-eyebrow text-white/45">Get in touch</h3>
-            <ul className="mt-5 space-y-3.5 text-sm">
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white/40" strokeWidth={1.6} />
-                <span>
-                  hello@creatourzz.example
-                  <span className="block text-2xs text-white/35">Placeholder address — demo project</span>
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-white/40" strokeWidth={1.6} />
-                <span>
-                  +91 00000 00000
-                  <span className="block text-2xs text-white/35">Placeholder number — demo project</span>
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-white/40" strokeWidth={1.6} />
-                <span>
-                  Sample Studio Address
-                  <span className="block text-2xs text-white/35">Bengaluru, India — placeholder</span>
-                </span>
-              </li>
-            </ul>
+            <a
+              href={CONTACT_MAILTO}
+              className="mt-5 inline-flex items-start gap-3 text-sm transition-colors hover:text-white"
+            >
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white/40" strokeWidth={1.6} />
+              <span className="break-all underline-offset-4 hover:underline">{CONTACT_EMAIL}</span>
+            </a>
+            <p className="mt-4 text-2xs leading-relaxed text-white/40">
+              Email is the only way to reach us — we do not list a phone number or office address we cannot answer.
+            </p>
+            <p className="mt-5 text-pretty text-sm leading-relaxed text-white/70">{CUSTOM_TOUR_HEADLINE}</p>
+            <Link
+              href="/contact"
+              className="mt-3 inline-flex items-center rounded-full border border-white/25 px-4 py-2 text-2xs font-medium text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink"
+            >
+              Plan Your Customised Tour
+            </Link>
           </div>
         </div>
 
@@ -101,8 +76,8 @@ export function Footer() {
             </ul>
           </div>
           <p className="mt-4 text-2xs leading-relaxed text-white/30">
-            All pricing, itineraries, reviews and contact details on this site are sample content created to
-            demonstrate the product. No bookings or payments are processed here.
+            Pricing shown is indicative and itineraries and reviews are sample content created to demonstrate the
+            product. No bookings or payments are processed here.
           </p>
         </div>
       </div>

@@ -2,15 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { photos } from '@/data/images';
-import { destinations, packages } from '@/lib/catalogue';
+import { packages } from '@/lib/catalogue';
 import { SearchBar } from './SearchBar';
 
+/** The four signature journeys, and nothing else. */
 const QUICK_LINKS = [
-  { label: 'Andaman', href: '/packages/andaman' },
-  { label: 'Kashmir', href: '/packages/kashmir' },
-  { label: 'Kerala', href: '/packages/kerala' },
-  { label: 'Rajasthan', href: '/packages/rajasthan' },
-  { label: 'Bali', href: '/packages/bali' },
+  { label: 'Tribal Odisha', href: '/packages/tribal-odisha' },
+  { label: 'Heritage Rajasthan', href: '/packages/rajasthan-heritage' },
+  { label: 'Wildlife North East', href: '/packages/wildlife-north-east' },
+  { label: 'Handicrafts Gujarat', href: '/packages/handicrafts-gujarat' },
 ];
 
 export function Hero() {
@@ -82,8 +82,8 @@ export function Hero() {
       <div className="shell relative">
         <dl className="grid grid-cols-2 gap-x-6 gap-y-7 border-t border-white/15 pt-8 sm:grid-cols-4">
           {[
-            { k: String(destinations.length), v: 'Destinations curated' },
-            { k: String(packages.length), v: 'Itineraries ready to book' },
+            { k: '4', v: 'Signature journeys' },
+            { k: String(packages.length), v: 'Itineraries in the catalogue' },
             { k: '0', v: 'Hidden charges' },
             { k: '24/7', v: 'Trip-day assistance' },
           ].map((stat) => (

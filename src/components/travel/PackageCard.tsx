@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, CalendarDays, MapPin } from 'lucide-react';
 import type { Package } from '@/lib/types';
 import { inr, duration, cn } from '@/lib/format';
+import { priceHeading, priceBasisShort } from '@/lib/pricing';
 import { destinationFor } from '@/lib/catalogue';
 import { Badge } from '@/components/ui/Badge';
 
@@ -16,7 +17,7 @@ export function PackageCard({
   className?: string;
 }) {
   const destination = destinationFor(pkg);
-  const saving = pkg.compareAtPrice ? pkg.compareAtPrice - pkg.pricePerPerson : 0;
+  const saving = pkg.compareAtPrice ? pkg.compareAtPrice - pkg.price : 0;
 
   return (
     <article
@@ -77,14 +78,14 @@ export function PackageCard({
 
         <div className="mt-auto flex items-end justify-between gap-4 pt-6">
           <div>
-            <p className="text-2xs uppercase tracking-eyebrow text-ink-mute">Starting from</p>
+            <p className="text-2xs uppercase tracking-eyebrow text-ink-mute">{priceHeading(pkg)}</p>
             <p className="mt-1 flex items-baseline gap-2">
-              <span className="font-display text-[1.625rem] leading-none text-ink">{inr(pkg.pricePerPerson)}</span>
+              <span className="font-display text-[1.625rem] leading-none text-ink">{inr(pkg.price)}</span>
               {pkg.compareAtPrice ? (
                 <span className="text-2xs text-ink-faint line-through">{inr(pkg.compareAtPrice)}</span>
               ) : null}
             </p>
-            <p className="mt-1 text-2xs text-ink-mute">per person</p>
+            <p className="mt-1 text-2xs text-ink-mute">{priceBasisShort(pkg)}</p>
           </div>
 
           <span className="relative z-10 inline-flex items-center gap-1.5 rounded-full border border-line-strong px-4 py-2.5 text-2xs font-medium text-ink transition-all duration-300 ease-creatourzz group-hover:border-accent group-hover:bg-accent group-hover:text-white">

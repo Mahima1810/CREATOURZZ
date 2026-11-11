@@ -71,11 +71,18 @@ export type HeritageSite = {
   sources: { label: string; url: string }[];
 };
 
+/**
+ * A way to travel a route, not a price point.
+ *
+ * Tiers deliberately carry no number. The package headline price is the single
+ * indicative figure quoted anywhere on the site; attaching a second set of
+ * per-person prices here is how a page ends up contradicting itself. What
+ * separates the tiers is the stay, the vehicle and the guiding — and the exact
+ * cost of each is settled in a written quote.
+ */
 export type PriceTier = {
   id: 'budget' | 'premium' | 'luxury';
   name: string;
-  /** Indicative, per person, twin sharing, in INR. */
-  pricePerPerson: number;
   hotels: string;
   transport: string;
   includes: string[];
@@ -96,8 +103,17 @@ export type Package = {
   overview: string;
   nights: number;
   days: number;
-  /** Per person, INR, twin-sharing. Sample pricing for this demo. */
-  pricePerPerson: number;
+  /**
+   * Indicative price in INR. Read it with `priceBasis` — the number alone does
+   * not say whether it covers one traveller or the whole journey.
+   */
+  price: number;
+  /**
+   * How `price` should be read. The four signature journeys are quoted as a
+   * whole-package figure; everything else is per person on twin sharing.
+   * Defaults to per-person when absent.
+   */
+  priceBasis?: 'per-person' | 'package';
   /** Optional struck-through reference price, also sample data. */
   compareAtPrice?: number;
   hotelCategory: string;
@@ -111,6 +127,13 @@ export type Package = {
   goodToKnow: string[];
   gallery: Photo[];
   featured?: boolean;
+  /**
+   * One of the four signature journeys the site is built around. These are the
+   * only packages shown in the homepage featured section.
+   */
+  signature?: boolean;
+  /** What makes the journey distinctive — shown as a grid on the detail page. */
+  keyExperiences?: { title: string; detail: string }[];
 
   /* ── Optional editorial extras. Present on flagship packages only; the
         package page renders each section when its data exists. ── */

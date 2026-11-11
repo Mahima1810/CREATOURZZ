@@ -6,54 +6,57 @@ import type { Testimonial } from '@/lib/types';
  * These are illustrative reviews written for this prototype. They are not real
  * customer feedback, and the names are invented. Every surface that renders
  * them also labels them as sample content.
+ *
+ * They reference the four signature journeys rather than the wider catalogue,
+ * so the homepage does not quietly advertise trips it no longer features.
  */
 export const testimonials: Testimonial[] = [
   {
     id: 't1',
     name: 'Ananya R.',
-    trip: 'Kerala Backwaters & Hills',
+    trip: 'Tribal Odisha',
     quote:
-      'The houseboat night was the part I expected to like, and it was good — but the thing I keep telling people about is that the driver knew exactly which tea estate road to take at six in the morning. Small decisions, made well.',
+      'We were sent the conduct guidelines a fortnight before we flew, and I will admit I thought they were overkill. At the market on the second morning I understood exactly why they existed. Nobody felt like an exhibit, including us.',
     rating: 5,
   },
   {
     id: 't2',
     name: 'Imran S.',
-    trip: 'Andaman Island Escape',
+    trip: 'Wildlife North East',
     quote:
-      'Ferries in the Andamans are where plans usually fall apart. Ours were booked, confirmed and re-confirmed before we landed. We never once stood in a queue wondering what was happening.',
+      'Four safaris across three different ranges, and each one felt like a different park. Nobody promised us a tiger, which I appreciated more than if they had.',
     rating: 5,
   },
   {
     id: 't3',
     name: 'Meera & Vikram',
-    trip: 'Maldives Overwater Serenity',
+    trip: 'Handicrafts Gujarat',
     quote:
-      'We asked for fewer activities and more nothing, and that is precisely what we were sent. The itinerary came back with half the things removed and a note explaining why the rest were worth keeping.',
+      'The Ajrakh washing was not running the week we visited and we were told so a month ahead rather than discovering it in Kutch. They offered to move our dates. That one email told us everything.',
     rating: 5,
   },
   {
     id: 't4',
     name: 'Rohit D.',
-    trip: 'Rajasthan Royal Circuit',
+    trip: 'Heritage Rajasthan',
     quote:
-      'Seven days, three cities, zero surprises on the bill. The quote we approved is the number we paid, including the camp night at Sam.',
-    rating: 4,
+      'Ten days, five forts, and the longest drive was broken by a night at Kumbhalgarh I would never have thought to ask for. The route was clearly designed by someone who has actually driven it.',
+    rating: 5,
   },
   {
     id: 't5',
     name: 'Shalini K.',
-    trip: 'Himachal Mountain Trail',
+    trip: 'Tribal Odisha',
     quote:
-      'Rohtang was closed the week we travelled. We were told before we left, offered an alternative day around Sissu, and nobody tried to pretend it was still happening.',
+      'Starting at the tribal museum in Bhubaneswar reframed the whole trip. By the time we reached Koraput we knew what we were looking at instead of just photographing it.',
     rating: 5,
   },
   {
     id: 't6',
     name: 'Joseph M.',
-    trip: 'Bali Island Immersion',
+    trip: 'Handicrafts Gujarat',
     quote:
-      'Three nights in Ubud and three on the coast was the right split, and I would not have worked that out on my own. The cooking class was the surprise of the trip.',
-    rating: 5,
+      'Four nights in Bhuj sounded like too many until we did it. Driving out and back each day beat repacking every morning, and we got to return to a weaver we had met on day one.',
+    rating: 4,
   },
 ];

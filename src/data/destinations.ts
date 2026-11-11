@@ -121,6 +121,72 @@ export const destinations: Destination[] = [
     gallery: [photos.maldives2, photos.maldives3, photos.maldives4, photos.maldives5, photos.maldives6],
     keywords: ['maldives', 'overwater', 'water villa', 'atoll', 'lagoon', 'island', 'honeymoon', 'luxury', 'international', 'reef'],
   },
+
+  /* ── The three destinations behind the new signature journeys ── */
+  {
+    slug: 'odisha',
+    name: 'Odisha',
+    region: 'Eastern India',
+    country: 'India',
+    tagline: 'Craft villages, tribal country and a temple coast',
+    blurb:
+      'The painted lanes of Raghurajpur, the weekly hill markets of the southern districts, and a lagoon coast with Konark at the end of it.',
+    startingPrice: 250000,
+    bestMonths: 'October – March',
+    hero: photos.odishaHero,
+    gallery: [
+      photos.odishaSaura,
+      photos.odishaPattachitra,
+      photos.odishaMarket,
+      photos.odishaSantal,
+      photos.odishaKonark,
+      photos.odishaChilika,
+    ],
+    keywords: ['odisha', 'orissa', 'tribal', 'adivasi', 'indigenous', 'bonda', 'kondh', 'saura', 'santal', 'pattachitra', 'raghurajpur', 'koraput', 'konark', 'chilika', 'bhubaneswar', 'puri', 'craft', 'culture', 'heritage', 'communities'],
+  },
+  {
+    slug: 'north-east',
+    name: 'North East India',
+    region: 'Assam, Meghalaya & Arunachal',
+    country: 'India',
+    tagline: 'Rhino grassland, rainforest and river country',
+    blurb:
+      'Kaziranga at first light, gibbons in the Hollongapar canopy, and the forested hills of Meghalaya and Arunachal beyond it.',
+    startingPrice: 250000,
+    bestMonths: 'November – April (most parks close through the monsoon)',
+    hero: photos.neHero,
+    gallery: [
+      photos.neElephants,
+      photos.neGibbon,
+      photos.neWetland,
+      photos.neBuffalo,
+      photos.neManas,
+      photos.neNamdapha,
+      photos.neRootBridge,
+    ],
+    keywords: ['north east', 'northeast', 'assam', 'kaziranga', 'manas', 'meghalaya', 'arunachal', 'namdapha', 'rhino', 'rhinoceros', 'elephant', 'gibbon', 'hornbill', 'wildlife', 'safari', 'birding', 'biodiversity', 'forest', 'nature', 'national park'],
+  },
+  {
+    slug: 'gujarat',
+    name: 'Gujarat',
+    region: 'Kutch & Western India',
+    country: 'India',
+    tagline: 'Looms, dye pits and mirror-work',
+    blurb:
+      'Kutch workshop to workshop — Ajrakh printing, bandhani tying, Rogan painting and the embroidery traditions of the desert villages.',
+    startingPrice: 250000,
+    bestMonths: 'November – February',
+    hero: photos.gujaratHero,
+    gallery: [
+      photos.gujaratEmbroidery,
+      photos.gujaratRogan,
+      photos.gujaratPatola,
+      photos.gujaratBandhani,
+      photos.gujaratBhujodi,
+      photos.gujaratMaldhari,
+    ],
+    keywords: ['gujarat', 'kutch', 'kachchh', 'bhuj', 'ajrakh', 'bandhani', 'patola', 'patan', 'rogan', 'embroidery', 'textile', 'weaving', 'pottery', 'handicraft', 'handicrafts', 'craft', 'crafts', 'artisan', 'block printing', 'bhujodi', 'nirona', 'traditions'],
+  },
 ];
 
 export const destinationBySlug = new Map(destinations.map((d) => [d.slug, d]));

@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { packages, packageBySlug, destinationFor, packagesForDestination } from '@/lib/catalogue';
 import { inr, duration, cn } from '@/lib/format';
+import { priceBasisLabel, priceBasisShort, PRICING_NOTE } from '@/lib/pricing';
+import { CONTACT_EMAIL, CONTACT_MAILTO } from '@/lib/contact';
 import type { Package } from '@/lib/types';
 import { Gallery } from '@/components/travel/Gallery';
 import { Itinerary } from '@/components/travel/Itinerary';
@@ -26,6 +28,7 @@ import { RouteOverview } from '@/components/travel/RouteOverview';
 import { HeritageSites } from '@/components/travel/HeritageSites';
 import { TiersSection } from '@/components/travel/TiersSection';
 import { Faqs } from '@/components/travel/Faqs';
+import { CustomisedTourBandWithDialog } from '@/components/travel/CustomisedTourBand';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Reveal } from '@/components/site/Reveal';
@@ -49,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!pkg) return { title: 'Package not found' };
   return {
     title: pkg.name,
-    description: `${duration(pkg.nights, pkg.days)} · from ${inr(pkg.pricePerPerson)} per person. ${pkg.summary}`,
+    description: `${duration(pkg.nights, pkg.days)} · ${inr(pkg.price)} ${priceBasisShort(pkg)}. ${pkg.summary}`,
   };
 }
 
@@ -139,7 +142,7 @@ export default async function PackagePage({ params }: Props) {
                 </Badge>
               ))}
               <Badge tone="onPhoto">{duration(pkg.nights, pkg.days)}</Badge>
-              <Badge tone="onPhoto">From {inr(pkg.pricePerPerson)} pp · indicative</Badge>
+              <Badge tone="onPhoto">{inr(pkg.price)} · {priceBasisShort(pkg)}</Badge>
             </div>
 
             <h1 className="display mt-5 max-w-4xl text-[2.25rem] text-white sm:text-[3.25rem] lg:text-[4rem]">
@@ -209,6 +212,29 @@ export default async function PackagePage({ params }: Props) {
                 <div className="mt-14">
                   <h2 className="display text-[1.75rem] sm:text-[2rem]">Trip overview</h2>
                   <p className="mt-4 text-pretty text-[1.0625rem] leading-relaxed text-ink-soft">{pkg.overview}</p>
+                </div>
+              ) : null}
+
+              {/* Key experiences — the four things that define the journey */}
+              {pkg.keyExperiences?.length ? (
+                <div className="mt-14">
+                  <h2 className="display text-[1.75rem] sm:text-[2rem]">Key experiences</h2>
+                  <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                    {pkg.keyExperiences.map((exp) => (
+                      <div
+                        key={exp.title}
+                        className={cn(
+                          'rounded-3xl border p-5 sm:p-6',
+                          editorial ? 'border-gold/25 bg-ivory' : 'border-line bg-surface',
+                        )}
+                      >
+                        <h3 className="font-display text-lg leading-snug">{exp.title}</h3>
+                        <p className="mt-2.5 text-pretty text-[0.875rem] leading-relaxed text-ink-soft">
+                          {exp.detail}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ) : null}
 
@@ -302,6 +328,13 @@ export default async function PackagePage({ params }: Props) {
           </div>
         </section>
       ) : null}
+
+      {/* ───────── Customised tours ───────── */}
+      <section className={cn('py-16 lg:py-20', editorial ? 'bg-canvas' : 'bg-canvas')}>
+        <div className="shell">
+          <CustomisedTourBandWithDialog tone={editorial ? 'heritage' : 'default'} />
+        </div>
+      </section>
 
       {/* ───────── Related ───────── */}
       {related.length ? (
@@ -401,10 +434,7 @@ function OtherInformation({ pkg, editorial }: { pkg: Package; editorial: boolean
         )}
       >
         {[
-          [
-            'Price per person',
-            `${inr(pkg.pricePerPerson)} on twin sharing${pkg.tiers?.length ? ' — lowest tier, indicative' : ''}`,
-          ],
+          [priceBasisLabel(pkg), `${inr(pkg.price)} — indicative`],
           ['Hotel category', pkg.hotelCategory],
           ['Trip duration', duration(pkg.nights, pkg.days)],
           ['Best time to visit', pkg.bestTime],
@@ -415,6 +445,20 @@ function OtherInformation({ pkg, editorial }: { pkg: Package; editorial: boolean
           </div>
         ))}
       </dl>
+
+      <p
+        className={cn(
+          'mt-5 rounded-2xl border px-5 py-4 text-[0.875rem] leading-relaxed text-ink-soft',
+          editorial ? 'border-gold/25 bg-sandstone/60' : 'border-line bg-sand',
+        )}
+      >
+        <strong className="font-medium text-ink">{PRICING_NOTE}</strong>{' '}
+        Write to{' '}
+        <a href={CONTACT_MAILTO} className="text-accent underline underline-offset-2 hover:text-accent-dark">
+          {CONTACT_EMAIL}
+        </a>{' '}
+        or send an enquiry — no payment is taken on this site.
+      </p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         <div>

@@ -45,12 +45,37 @@ export const rajasthanHeritage: Package = {
     'Most Rajasthan itineraries are a list of cities with the driving quietly left out. This one is built the other way round: the route was drawn first, around how far a person can comfortably travel in a day, and the stops were chosen to survive that test. What remains is four Rajput capitals — Amber, Marwar, Jaisalmer and Mewar — and the hill forts that made them possible, read in the order the history actually moves. You get a guide at each major monument and enough time inside it to understand what you are looking at, rather than forty minutes and a photograph from the car park.',
   nights: 9,
   days: 10,
-  pricePerPerson: 42999,
+  price: 300000,
+  priceBasis: 'package',
   hotelCategory: 'Three tiers — from 3-star hotels to palace properties',
   bestTime: 'October to March. April and May regularly pass 40°C in the desert districts.',
   styles: ['Heritage'],
   featured: true,
+  signature: true,
   editorial: true,
+
+  keyExperiences: [
+    {
+      title: 'Four Rajput capitals in sequence',
+      detail:
+        'Amber, Marwar, Jaisalmer and Mewar, read in the order the history actually moves rather than the order a map suggests.',
+    },
+    {
+      title: 'Five forts, with time inside them',
+      detail:
+        'Amer, Mehrangarh, Jaisalmer, Kumbhalgarh and optionally Chittorgarh — each with a guide and hours rather than minutes.',
+    },
+    {
+      title: 'A route built around driving time',
+      detail:
+        'Kumbhalgarh splits the longest leg into two comfortable days. No single transfer runs beyond roughly six hours.',
+    },
+    {
+      title: 'Record kept apart from legend',
+      detail:
+        'Every monument is interpreted with its documented history and its traditional stories clearly separated.',
+    },
+  ],
 
   highlights: [
     'Amer Fort at opening time, before the coaches arrive',
@@ -362,7 +387,6 @@ export const rajasthanHeritage: Package = {
     {
       id: 'budget',
       name: 'Budget',
-      pricePerPerson: 42999,
       hotels: 'Clean 3-star hotels, centrally located',
       transport: 'Private air-conditioned sedan with driver',
       includes: [
@@ -376,7 +400,6 @@ export const rajasthanHeritage: Package = {
     {
       id: 'premium',
       name: 'Premium',
-      pricePerPerson: 68999,
       recommended: true,
       hotels: '4-star hotels, with two nights in heritage-style properties',
       transport: 'Private air-conditioned SUV with driver',
@@ -392,7 +415,6 @@ export const rajasthanHeritage: Package = {
     {
       id: 'luxury',
       name: 'Luxury',
-      pricePerPerson: 124999,
       hotels: '5-star and palace-category properties throughout',
       transport: 'Chauffeured premium SUV, with an airport meet-and-greet',
       includes: [

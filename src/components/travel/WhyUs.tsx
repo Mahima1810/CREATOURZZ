@@ -61,7 +61,7 @@ export function WhyUs() {
               />
             </div>
             <figcaption className="mt-3 text-2xs text-ink-mute">
-              The Western Himalayas — one of eight regions we currently plan for.
+              The Western Himalayas — one of the regions we plan journeys through.
             </figcaption>
           </Reveal>
         </div>

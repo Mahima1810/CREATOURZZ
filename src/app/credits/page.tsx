@@ -35,9 +35,19 @@ export default function CreditsPage() {
               key={photo.src}
               className="overflow-hidden rounded-2xl border border-line bg-surface shadow-card"
             >
+              {/*
+                Unoptimised on purpose. This page renders every photograph on
+                the site at once, so routing ~80 thumbnails through the image
+                optimiser means ~80 upstream fetches of 1920px originals — it
+                saturates and starts answering 500. Commons only serves widths
+                it has already rendered, so requesting a smaller source is not
+                an option either. Letting the browser fetch each one lazily,
+                straight from the Wikimedia CDN, is the fix that actually works.
+              */}
               <div className="relative aspect-[16/10] bg-sand">
                 <Image
                   src={photo.src}
+                  unoptimized
                   alt={photo.alt}
                   fill
                   priority={index < 3}

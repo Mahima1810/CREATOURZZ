@@ -2,12 +2,16 @@
 
 import { Check, BedDouble, Car, Info } from 'lucide-react';
 import type { PriceTier } from '@/lib/types';
-import { inr, cn } from '@/lib/format';
+import { cn } from '@/lib/format';
+import { PRICING_NOTE } from '@/lib/pricing';
 import { Button } from '@/components/ui/Button';
 
 /**
- * Three-tier indicative pricing.
- * Selecting a tier pre-fills the hotel category on the enquiry form.
+ * Three ways to travel the same route.
+ *
+ * These cards carry no prices of their own — the package headline figure is the
+ * only number quoted, and a second per-tier set would contradict it. Choosing a
+ * tier pre-fills the hotel category on the enquiry form.
  */
 export function PricingTiers({
   tiers,
@@ -45,10 +49,10 @@ export function PricingTiers({
 
             <h3 className="font-display text-2xl">{tier.name}</h3>
 
-            <p className="mt-4 flex items-baseline gap-2">
-              <span className="font-display text-[2.25rem] leading-none">{inr(tier.pricePerPerson)}</span>
+            <p className="mt-3 text-pretty text-[0.875rem] leading-relaxed text-ink-soft">
+              Costed against the single indicative package price above. What moves between tiers is the stay, the
+              vehicle and the guiding — never the route.
             </p>
-            <p className="mt-1.5 text-2xs text-ink-mute">per person, twin sharing · indicative</p>
 
             <dl className="mt-5 space-y-3 border-y border-gold/20 py-4">
               <div className="flex items-start gap-2.5">
@@ -91,10 +95,9 @@ export function PricingTiers({
       <p className="mt-6 flex items-start gap-2.5 rounded-2xl border border-gold/25 bg-sandstone/60 px-5 py-4 text-[0.875rem] leading-relaxed text-ink-soft">
         <Info className="mt-0.5 h-4 w-4 shrink-0 text-gold" strokeWidth={1.8} />
         <span>
-          <strong className="font-medium text-ink">All three prices are indicative.</strong> They are quoted per
-          person on twin sharing to show the difference between the tiers, and they move with your dates, group size
-          and live hotel rates. Nothing is confirmed until you have a written quote naming the actual properties — and
-          no payment is taken on this site.
+          <strong className="font-medium text-ink">The package price is indicative.</strong> It moves with your
+          dates, your group size, the tier you choose and live hotel rates. {PRICING_NOTE} Nothing is confirmed until
+          you have a written quote naming the actual properties — and no payment is taken on this site.
         </span>
       </p>
     </section>

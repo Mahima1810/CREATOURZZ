@@ -1,9 +1,10 @@
 # CREATOURZZ — *Discover More. Travel Better.*
 
 A complete, working travel discovery and booking-enquiry website, built as a product
-demonstration. Eight destinations, thirteen costed itineraries, real search and
-filtering, day-wise package pages, and an enquiry flow that is honest about what it
-does.
+demonstration. The site is built around **four signature journeys** — Tribal Odisha,
+Heritage Rajasthan, Wildlife North East and Handicrafts Gujarat — with a wider
+catalogue of sixteen costed itineraries behind them, real search and filtering,
+day-wise package pages, and an enquiry flow that is honest about what it does.
 
 > **This is a demonstration project.** CREATOURZZ is not a registered travel company.
 > Pricing, itineraries, reviews and contact details are sample or indicative content.
@@ -100,7 +101,7 @@ Whichever you choose, only `src/lib/enquiry-store.ts` changes.
 | Framework | Next.js 15, App Router, React 19 |
 | Language | TypeScript, strict |
 | Styling | Tailwind CSS 3 with a bespoke token layer |
-| Icons | lucide-react (brand glyphs drawn in `components/site/SocialIcons.tsx`, since lucide v1 dropped them) |
+| Icons | lucide-react |
 | Type | Instrument Serif (display) + Inter (UI), via `next/font` |
 | Data | Typed modules under `src/data` — no CMS, no database |
 
@@ -110,11 +111,14 @@ Whichever you choose, only `src/lib/enquiry-store.ts` changes.
 
 | Route | What it is |
 |---|---|
-| `/` | Home — hero search, destinations, flagship band, featured packages, why us, testimonials |
+| `/` | Home — hero search, the four signature journeys, customised tours, why us, testimonials |
 | `/destinations` | Explore destinations, searchable |
 | `/packages` | All packages with search, four filters and sorting |
 | `/packages/[slug]` | Package detail — gallery, day-wise itinerary, inclusions, policies, enquiry |
-| `/packages/rajasthan-heritage` | The flagship: editorial treatment, heritage dossiers, three price tiers, FAQs |
+| `/packages/tribal-odisha` | Signature: market-timed route, stated visitor conduct, FAQs |
+| `/packages/rajasthan-heritage` | Signature: heritage dossiers separating record from legend, three tiers, FAQs |
+| `/packages/wildlife-north-east` | Signature: two UNESCO parks, four Kaziranga ranges, gibbon trek |
+| `/packages/handicrafts-gujarat` | Signature: Patan patola and the Kutch craft villages |
 | `/about`, `/contact` | Company pages; contact carries a general enquiry form |
 | `/enquiry/confirmation` | Confirmation screen with the issued reference |
 | `/credits` | Photography attribution — required by the image licences |
@@ -133,14 +137,20 @@ src/
     travel/                domain components — cards, search, itinerary, enquiry
     ui/                    Button, Badge, SectionHeading, EmptyState, Spinner
   data/
-    destinations.ts        the eight destinations
-    packages.ts            the catalogue; imports the flagship
-    rajasthan-heritage.ts  the flagship package, with route reasoning documented
+    destinations.ts        the eleven destinations
+    packages.ts            the catalogue; imports the four signature journeys
+    rajasthan-heritage.ts  signature package, with route reasoning documented
+    tribal-odisha.ts       signature package — market days drive the calendar
+    wildlife-north-east.ts signature package — west-then-east, no backtrack
+    handicrafts-gujarat.ts signature package — mainland crafts en route to Kutch
+    shared-policies.ts     exclusions, cancellation and the signature good-to-know
     images.ts              generated photo manifest with licence metadata
     testimonials.ts        clearly-labelled demo reviews
   lib/
     types.ts               the domain model
-    catalogue.ts           search scoring, filtering, sorting
+    catalogue.ts           search scoring, filtering, sorting, signature selection
+    pricing.ts             one place for every claim the site makes about money
+    contact.ts             the one real contact channel, and the customised-tour copy
     validation.ts          shared by the browser form and the API route
     enquiry-store.ts       the demo persistence layer — swap this one file
     format.ts              currency, duration, class names
@@ -214,10 +224,23 @@ World Heritage listing for the Hill Forts of Rajasthan and the linked encyclopae
 articles, and each monument separates *On the record* from *Tradition and legend* —
 Rajasthan's forts attract a great deal of both, and the page does not blur them.
 
+**Pricing.** The four signature journeys are quoted as a single **indicative package
+price**, not a per-person fare — `priceBasis` on the package says which, and
+`src/lib/pricing.ts` is the only place that decides how it is worded. The three
+Rajasthan tiers deliberately carry **no prices of their own**: a second set of
+per-person numbers alongside a package price is how a page ends up contradicting
+itself. Every price surface also carries "Contact us for detailed pricing and package
+customisation."
+
+**Contact.** `creatourzz@zohomail.in` is the one real channel and appears as a `mailto:`
+in the footer, on the contact page, in the customised-tour band and on every package
+page. There is deliberately **no phone number, office address or social account** — an
+invented number is worse than no number, because it looks like a way to reach someone
+and is not.
+
 **What is deliberately not invented.** No hotel names or partnerships, no ticket prices,
 no customer reviews presented as real, no company credentials, no transport guarantees.
-The testimonials are labelled sample content; contact details are labelled placeholders;
-tier pricing is labelled indicative.
+The testimonials are labelled sample content throughout.
 
 ---
 

@@ -1,6 +1,10 @@
 import type { Package } from '@/lib/types';
 import { photos } from './images';
 import { rajasthanHeritage } from './rajasthan-heritage';
+import { tribalOdisha } from './tribal-odisha';
+import { wildlifeNorthEast } from './wildlife-north-east';
+import { handicraftsGujarat } from './handicrafts-gujarat';
+import { COMMON_EXCLUSIONS, COMMON_CANCELLATION } from './shared-policies';
 
 /**
  * Tour package catalogue.
@@ -12,22 +16,6 @@ import { rajasthanHeritage } from './rajasthan-heritage';
  * All prices, itineraries and policies are SAMPLE CONTENT for a demo build.
  */
 
-const COMMON_EXCLUSIONS = [
-  'Flights and train fares to and from the start point',
-  'Personal expenses — laundry, telephone, tips, minibar',
-  'Optional activities and anything marked "at own cost"',
-  'Travel insurance and medical cover',
-  'Anything not explicitly listed under inclusions',
-];
-
-const COMMON_CANCELLATION = [
-  'More than 30 days before departure — 90% of the trip cost refunded',
-  '30 to 15 days before departure — 50% of the trip cost refunded',
-  '14 to 8 days before departure — 25% of the trip cost refunded',
-  'Under 7 days before departure, or no-show — no refund',
-  'Third-party charges already paid (flights, ferries, permits) follow the operator’s own policy',
-];
-
 const COMMON_GOOD_TO_KNOW = [
   'Prices are per person on twin-sharing occupancy and change with season and availability',
   'A valid government photo ID is required at every hotel check-in',
@@ -36,8 +24,16 @@ const COMMON_GOOD_TO_KNOW = [
 ];
 
 export const packages: Package[] = [
-  /* ──────────────────── RAJASTHAN — FLAGSHIP ──────────────────── */
+  /* ─────────────── THE FOUR SIGNATURE JOURNEYS ───────────────
+     These four are what the site is built around: they lead this array, carry
+     `signature: true`, and are the only packages the homepage features. The
+     rest remain reachable and searchable under /packages. */
+  tribalOdisha,
   rajasthanHeritage,
+  wildlifeNorthEast,
+  handicraftsGujarat,
+
+  /* ──────────────── THE WIDER CATALOGUE ──────────────── */
 
   /* ───────────────────────────── ANDAMAN ───────────────────────────── */
   {
@@ -49,7 +45,7 @@ export const packages: Package[] = [
       'Six days across three islands, built around the sea rather than a checklist. You start in Port Blair with the Cellular Jail, cross to Havelock for Radhanagar and the Elephant Beach reef, then slow right down on Neil before heading home. Ferries, transfers and stays are handled; the afternoons are yours.',
     nights: 5,
     days: 6,
-    pricePerPerson: 24999,
+    price: 24999,
     compareAtPrice: 29999,
     hotelCategory: '3-star / premium beach resorts',
     bestTime: 'October to May',
@@ -163,7 +159,7 @@ export const packages: Package[] = [
       'The same three islands, given room to breathe — seven days, private boats instead of shared ones, and two nights in a beachfront room on Havelock. Built for couples who would rather watch a tide come in than tick a list.',
     nights: 6,
     days: 7,
-    pricePerPerson: 39999,
+    price: 39999,
     compareAtPrice: 46999,
     hotelCategory: '4-star beachfront resorts',
     bestTime: 'October to May',
@@ -271,7 +267,7 @@ export const packages: Package[] = [
       'Six days through the valley at the pace the valley keeps. A night on a cedar houseboat, the gondola up Apharwat at Gulmarg, and a day in the meadows above Pahalgam — with enough unscheduled time to sit still somewhere and take it in.',
     nights: 5,
     days: 6,
-    pricePerPerson: 27499,
+    price: 27499,
     compareAtPrice: 32999,
     hotelCategory: '3-star hotels and deluxe houseboat',
     bestTime: 'March to October; December to February for snow',
@@ -379,7 +375,7 @@ export const packages: Package[] = [
       'A short coastal break that skips the crowds. Two nights near Palolem in the south, a day among the laterite churches of Old Goa, and a spice plantation lunch inland — with the beach never more than a few minutes away.',
     nights: 3,
     days: 4,
-    pricePerPerson: 14999,
+    price: 14999,
     hotelCategory: '3-star beach resorts',
     bestTime: 'November to February',
     styles: ['Beach'],
@@ -460,7 +456,7 @@ export const packages: Package[] = [
       'Six days from the coast to the hills and back to the water. Fort Kochi for the Chinese nets and an evening of Kathakali, two nights among the tea estates at Munnar, and a full houseboat night drifting the Alleppey backwaters.',
     nights: 5,
     days: 6,
-    pricePerPerson: 22499,
+    price: 22499,
     compareAtPrice: 26499,
     hotelCategory: '3-star hotels and deluxe houseboat',
     bestTime: 'September to March',
@@ -572,7 +568,7 @@ export const packages: Package[] = [
       'The shortest way into Kerala’s hill country. Two nights in an estate-facing property above Munnar, a working tea factory, and the high viewpoints at Top Station — with a last night back down on the coast at Kochi.',
     nights: 3,
     days: 4,
-    pricePerPerson: 13999,
+    price: 13999,
     hotelCategory: '3-star estate-view hotels',
     bestTime: 'September to March',
     styles: ['Mountains'],
@@ -638,7 +634,7 @@ export const packages: Package[] = [
       'A classic first run at the Western Himalayas. The Mall at Shimla, the drive north through the Kullu valley, and two full days around Manali with the Solang meadow and — when the pass is open — the road up to Atal Tunnel and Sissu.',
     nights: 5,
     days: 6,
-    pricePerPerson: 18999,
+    price: 18999,
     compareAtPrice: 22999,
     hotelCategory: '3-star hill hotels',
     bestTime: 'March to June, September to November',
@@ -739,7 +735,7 @@ export const packages: Package[] = [
       'The hard, high version of Himachal. Over the passes into the Spiti valley, with nights at Kaza, the monastery at Key, and the villages at Kibber and Langza — thin air, long drives and some of the emptiest landscape in the country.',
     nights: 7,
     days: 8,
-    pricePerPerson: 34999,
+    price: 34999,
     hotelCategory: 'Guesthouses and homestays',
     bestTime: 'June to September',
     styles: ['Mountains', 'Adventure'],
@@ -842,7 +838,7 @@ export const packages: Package[] = [
       'The full western loop. Amber Fort above Jaipur, Mehrangarh over the blue city at Jodhpur, and the living fort at Jaisalmer — finishing with a night in a desert camp on the Sam dunes.',
     nights: 6,
     days: 7,
-    pricePerPerson: 29999,
+    price: 29999,
     compareAtPrice: 35999,
     hotelCategory: '4-star heritage hotels and a desert camp',
     bestTime: 'October to March',
@@ -943,7 +939,7 @@ export const packages: Package[] = [
       'A short, easy weekend in the most walkable city in Rajasthan. The City Palace complex, a boat out past the Lake Palace at golden hour, and an afternoon in the Aravalli hills at Sajjangarh.',
     nights: 2,
     days: 3,
-    pricePerPerson: 11999,
+    price: 11999,
     hotelCategory: '3-star lake-view hotels',
     bestTime: 'September to March',
     styles: ['Heritage', 'Honeymoon'],
@@ -1001,7 +997,7 @@ export const packages: Package[] = [
       'Three nights inland at Ubud for the rice terraces, waterfalls and the lake temple at Bratan, then three on the south coast for Uluwatu, the kecak at sunset and as much beach as you want. Private driver throughout.',
     nights: 6,
     days: 7,
-    pricePerPerson: 58999,
+    price: 58999,
     compareAtPrice: 67999,
     hotelCategory: '4-star resorts and villas',
     bestTime: 'April to October',
@@ -1102,7 +1098,7 @@ export const packages: Package[] = [
       'One resort island, a seaplane in, and nothing on the schedule. Two nights in a beach villa and two over the water on stilts, with a reef snorkel and a sunset dolphin cruise if you feel like moving.',
     nights: 3,
     days: 4,
-    pricePerPerson: 74999,
+    price: 74999,
     compareAtPrice: 89999,
     hotelCategory: '5-star resort island',
     bestTime: 'November to April',

@@ -48,7 +48,7 @@ export function FlagshipBand({ slug = 'rajasthan-heritage' }: { slug?: string })
               <CalendarDays className="h-3.5 w-3.5" strokeWidth={1.7} />
               {duration(pkg.nights, pkg.days)}
             </li>
-            <li>From {inr(pkg.pricePerPerson)} per person · indicative</li>
+            <li>From {inr(pkg.price)} per person · indicative</li>
             <li>{pkg.tiers?.length ?? 0} price tiers</li>
           </ul>
         </div>

@@ -8,6 +8,7 @@ import type { EnquiryInput, PriceTier } from '@/lib/types';
 import { Button } from '@/components/ui/Button';
 import { Spinner } from '@/components/ui/Spinner';
 import { cn } from '@/lib/format';
+import { packages } from '@/lib/catalogue';
 
 export const ENQUIRY_SESSION_KEY = 'creatourzz:last-enquiry';
 
@@ -194,6 +195,48 @@ export function EnquiryForm({
             className={cn('field', errors.phone && 'field-error')}
           />
         </Field>
+
+        {/*
+          When the form is opened from a package page the trip is already known.
+          When it is opened from "Plan Your Customised Tour" it is not, so the
+          enquiry needs somewhere to say which journey it is about — otherwise
+          every customised enquiry arrives unlabelled.
+        */}
+        {packageSlug ? null : (
+          <Field id={`${uid}-packageSlug`} label="Tour package" className="sm:col-span-2">
+            <select
+              id={`${uid}-packageSlug`}
+              name="packageSlug"
+              value={values.packageSlug ?? ''}
+              onChange={(e) => {
+                const slug = e.target.value;
+                const picked = packages.find((p) => p.slug === slug);
+                setValues((v) => ({ ...v, packageSlug: slug || undefined, packageName: picked?.name }));
+              }}
+              className="field"
+            >
+              <option value="">Not sure yet — or a customised tour</option>
+              <optgroup label="Signature journeys">
+                {packages
+                  .filter((p) => p.signature)
+                  .map((p) => (
+                    <option key={p.slug} value={p.slug}>
+                      {p.name}
+                    </option>
+                  ))}
+              </optgroup>
+              <optgroup label="Other itineraries">
+                {packages
+                  .filter((p) => !p.signature)
+                  .map((p) => (
+                    <option key={p.slug} value={p.slug}>
+                      {p.name}
+                    </option>
+                  ))}
+              </optgroup>
+            </select>
+          </Field>
+        )}
 
         <Field
           id={`${uid}-travellers`}

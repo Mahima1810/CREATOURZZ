@@ -93,7 +93,7 @@ export function Gallery({ photos, title }: { photos: Photo[]; title: string }) {
                   i === index ? 'ring-2 ring-accent' : 'opacity-65 hover:opacity-100',
                 )}
               >
-                <Image src={photo.src} alt="" fill sizes="112px" className="object-cover" />
+                <Image src={photo.src} alt="" fill sizes="112px" unoptimized className="object-cover" />
               </button>
             </li>
           ))}

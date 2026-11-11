@@ -50,7 +50,7 @@ export function packagesForDestination(slug: string): Package[] {
 
 /** Lowest live package price for a destination, falling back to its own figure. */
 export function startingPriceFor(destination: Destination): number {
-  const prices = packagesForDestination(destination.slug).map((p) => p.pricePerPerson);
+  const prices = packagesForDestination(destination.slug).map((p) => p.price);
   return prices.length ? Math.min(...prices) : destination.startingPrice;
 }
 
@@ -61,6 +61,22 @@ export function destinationFor(pkg: Package): Destination | undefined {
 export function featuredPackages(limit = 6): Package[] {
   const featured = packages.filter((p) => p.featured);
   return (featured.length ? featured : packages).slice(0, limit);
+}
+
+/**
+ * The four journeys the site is built around.
+ *
+ * These are the only packages the homepage features. Everything else stays
+ * reachable and searchable under /packages — demoted out of the shop window
+ * rather than deleted.
+ */
+export function signaturePackages(): Package[] {
+  return packages.filter((p) => p.signature);
+}
+
+/** Everything that is not one of the four. */
+export function otherPackages(): Package[] {
+  return packages.filter((p) => !p.signature);
 }
 
 /* ───────────────────────────────── search ───────────────────────────────── */
@@ -161,7 +177,7 @@ export function filterPackages(query: PackageQuery): Package[] {
     .filter(({ pkg, score }) => {
       if (score === 0) return false;
       if (query.destination && pkg.destinationSlug !== query.destination) return false;
-      if (budget && (pkg.pricePerPerson < budget.min || pkg.pricePerPerson > budget.max)) return false;
+      if (budget && (pkg.price < budget.min || pkg.price > budget.max)) return false;
       if (durationBand && (pkg.nights < durationBand.min || pkg.nights > durationBand.max)) return false;
       if (style && !pkg.styles.includes(style)) return false;
       return true;
@@ -171,16 +187,16 @@ export function filterPackages(query: PackageQuery): Package[] {
 
   switch (sort) {
     case 'price-asc':
-      scored.sort((a, b) => a.pkg.pricePerPerson - b.pkg.pricePerPerson);
+      scored.sort((a, b) => a.pkg.price - b.pkg.price);
       break;
     case 'price-desc':
-      scored.sort((a, b) => b.pkg.pricePerPerson - a.pkg.pricePerPerson);
+      scored.sort((a, b) => b.pkg.price - a.pkg.price);
       break;
     case 'duration-asc':
-      scored.sort((a, b) => a.pkg.nights - b.pkg.nights || a.pkg.pricePerPerson - b.pkg.pricePerPerson);
+      scored.sort((a, b) => a.pkg.nights - b.pkg.nights || a.pkg.price - b.pkg.price);
       break;
     case 'duration-desc':
-      scored.sort((a, b) => b.pkg.nights - a.pkg.nights || a.pkg.pricePerPerson - b.pkg.pricePerPerson);
+      scored.sort((a, b) => b.pkg.nights - a.pkg.nights || a.pkg.price - b.pkg.price);
       break;
     default:
       // Relevance first when searching, otherwise featured trips lead.
@@ -188,7 +204,7 @@ export function filterPackages(query: PackageQuery): Package[] {
         (a, b) =>
           b.score - a.score ||
           Number(Boolean(b.pkg.featured)) - Number(Boolean(a.pkg.featured)) ||
-          a.pkg.pricePerPerson - b.pkg.pricePerPerson,
+          a.pkg.price - b.pkg.price,
       );
   }
 

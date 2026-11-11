@@ -328,6 +328,145 @@ export const photos = {
     alt: 'The carved sandstone facade of Patwon Ki Haveli, Jaisalmer',
     credit: { author: 'Gerd Eichmann', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Jaisalmer-Patwon_Ki_Haveli-06-2018-gje.jpg' },
   },
+  /* ───────────────────── Tribal Odisha ─────────────────────
+     Each frame below was checked against its Commons description before use.
+     Two near-misses were rejected on the way: a "Patachitra artist at work"
+     that is Bengal patachitra rather than Odisha's pattachitra, and a set of
+     printing blocks photographed in Pushkar, Rajasthan. Right craft family,
+     wrong state — and a travel site that cannot tell them apart has no
+     business describing either. */
+  odishaHero: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Raghurajpur_Village.JPG/1920px-Raghurajpur_Village.JPG',
+    alt: 'Painted artisan houses lining the single street of Raghurajpur heritage craft village, Odisha',
+    credit: { author: 'Revanthv552', license: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Raghurajpur_Village.JPG' },
+  },
+  odishaSaura: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Lanjia_Saura_woman_in_traditional_jewelry.jpg/1920px-Lanjia_Saura_woman_in_traditional_jewelry.jpg',
+    alt: 'Portrait of a Lanjia Saura woman wearing traditional ear discs and bead necklaces, Rayagada district',
+    credit: { author: 'Subhashish Panigrahi', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Lanjia_Saura_woman_in_traditional_jewelry.jpg' },
+  },
+  odishaPattachitra: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Raghurajpur_7.jpg/1920px-Raghurajpur_7.jpg',
+    alt: 'An artist holding up a finished pattachitra scroll painting outside his studio at Raghurajpur',
+    credit: { author: 'Rangan Datta Wiki', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Raghurajpur_7.jpg' },
+  },
+  odishaArtisan: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Raghurajpur_2.jpg/1920px-Raghurajpur_2.jpg',
+    alt: 'A woman artisan painting at work in Raghurajpur heritage village, Odisha',
+    credit: { author: 'Rangan Datta Wiki', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Raghurajpur_2.jpg' },
+  },
+  odishaMarket: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/A_group_of_Bonda_tribals_at_Onekdeli_market_in_Malkangiri%2C_Odisha_03.jpg/1920px-A_group_of_Bonda_tribals_at_Onekdeli_market_in_Malkangiri%2C_Odisha_03.jpg',
+    alt: 'Bonda people at the weekly market at Onukudelli, Malkangiri district, Odisha',
+    credit: { author: 'Drashokk', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:A_group_of_Bonda_tribals_at_Onekdeli_market_in_Malkangiri,_Odisha_03.jpg' },
+  },
+  odishaSantal: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Dance_of_Santal_tribe_-Mayurbhanj_Odisha.JPG/1920px-Dance_of_Santal_tribe_-Mayurbhanj_Odisha.JPG',
+    alt: 'Santal dancers and drummers processing through open country in Mayurbhanj district, Odisha',
+    credit: { author: 'Swetapadma07', license: 'CC BY-SA 3.0', page: 'https://commons.wikimedia.org/wiki/File:Dance_of_Santal_tribe_-Mayurbhanj_Odisha.JPG' },
+  },
+  odishaKonark: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Wheel_engraved_in_the_13th_century_built_Konark_Sun_Temple_in_Orissa%2C_India.jpg/1920px-Wheel_engraved_in_the_13th_century_built_Konark_Sun_Temple_in_Orissa%2C_India.jpg',
+    alt: 'A carved stone chariot wheel on the 13th-century Sun Temple at Konark',
+    credit: { author: 'Joydeep', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Wheel_engraved_in_the_13th_century_built_Konark_Sun_Temple_in_Orissa,_India.jpg' },
+  },
+  odishaChilika: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Chilika_Lake_or_Chilka_in_Odisha_01.jpg/1920px-Chilika_Lake_or_Chilka_in_Odisha_01.jpg',
+    alt: 'Still water and a low shoreline at Chilika Lake, the brackish lagoon on the Odisha coast',
+    credit: { author: 'Pinakpani', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Chilika_Lake_or_Chilka_in_Odisha_01.jpg' },
+  },
+  odishaKondhHouse: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Kutia_Kondh_house_02.jpg/1920px-Kutia_Kondh_house_02.jpg',
+    alt: 'A traditional Kutia Kondh house, built as an exhibit at the Adivasi Mela in Bhubaneswar',
+    credit: { author: 'Prateek Pattanaik', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Kutia_Kondh_house_02.jpg' },
+  },
+
+  /* ───────────────────── Wildlife North East ───────────────────── */
+  neHero: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Indian_rhinoceros_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_02.jpg/1920px-Indian_rhinoceros_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_02.jpg',
+    alt: 'A greater one-horned rhinoceros crossing a shaded forest track in Kaziranga National Park, Assam',
+    credit: { author: 'Tisha Mukherjee', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Indian_rhinoceros_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_02.jpg' },
+  },
+  neElephants: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Herd_of_wild_Asian_elephants_in_the_grasslands_of_Kaziranga.jpg/1920px-Herd_of_wild_Asian_elephants_in_the_grasslands_of_Kaziranga.jpg',
+    alt: 'A herd of wild Asian elephants moving through tall grassland in Kaziranga National Park',
+    credit: { author: 'Thapalens', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Herd_of_wild_Asian_elephants_in_the_grasslands_of_Kaziranga.jpg' },
+  },
+  neGibbon: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Western_hoolock_gibbon_-_Hollongapar_Gibbon_Sanctuary_2023-01-12_01.jpg/1920px-Western_hoolock_gibbon_-_Hollongapar_Gibbon_Sanctuary_2023-01-12_01.jpg',
+    alt: 'A male western hoolock gibbon in the forest canopy at Hollongapar Gibbon Sanctuary, Assam',
+    credit: { author: 'Krunal Desai', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Western_hoolock_gibbon_-_Hollongapar_Gibbon_Sanctuary_2023-01-12_01.jpg' },
+  },
+  neWetland: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/View_of_a_wetland_landscape_in_Kaziranga_National_Park%2C_Assam.jpg/1920px-View_of_a_wetland_landscape_in_Kaziranga_National_Park%2C_Assam.jpg',
+    alt: 'A wetland and grassland landscape inside Kaziranga National Park, Assam',
+    credit: { author: 'Joli', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:View_of_a_wetland_landscape_in_Kaziranga_National_Park,_Assam.jpg' },
+  },
+  neBuffalo: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Wild_water_buffalo_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_07.jpg/1920px-Wild_water_buffalo_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_07.jpg',
+    alt: 'A wild water buffalo standing in grassland at Kaziranga National Park, Assam',
+    credit: { author: 'Tisha Mukherjee', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Wild_water_buffalo_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_07.jpg' },
+  },
+  neManas: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Manas-national-park-02.jpg/1920px-Manas-national-park-02.jpg',
+    alt: 'Forest and river country inside Manas National Park on the Assam–Bhutan border',
+    credit: { author: 'Anushila Bharali', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Manas-national-park-02.jpg' },
+  },
+  neNamdapha: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Landscape_Namdapha_Aparajita_Datta.jpg/1920px-Landscape_Namdapha_Aparajita_Datta.jpg',
+    alt: 'Dense forested ridges in Namdapha Tiger Reserve, Arunachal Pradesh',
+    credit: { author: 'Aparajita Datta', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Landscape_Namdapha_Aparajita_Datta.jpg' },
+  },
+  neRootBridge: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Living_root_bridge%2C_Maghalaya%2C_India2.jpg/1920px-Living_root_bridge%2C_Maghalaya%2C_India2.jpg',
+    alt: 'A living root bridge grown across a stream in the East Khasi Hills, Meghalaya',
+    credit: { author: 'Joydeep Chakraborty', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Living_root_bridge,_Maghalaya,_India2.jpg' },
+  },
+
+  /* ───────────────────── Handicrafts Gujarat ───────────────────── */
+  /* The two obvious Kutch embroidery files on Commons are PNGs that weigh 11 MB
+     each at 1920px — enough to time out the image optimiser and 500 the page.
+     These JPEG equivalents show the same craft at a tenth of the bytes. */
+  gujaratHero: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Woman%27s_shirt_from_Kutch%2C_Gujarat%2C_India%2C_IMA_55114%2C_2.jpg/1920px-Woman%27s_shirt_from_Kutch%2C_Gujarat%2C_India%2C_IMA_55114%2C_2.jpg',
+    alt: 'A Kutch woman’s silk shirt densely embroidered in silk with inset mirrors, on crimson ground',
+    credit: { author: 'Indianapolis Museum of Art', license: 'Copyrighted free use', page: 'https://commons.wikimedia.org/wiki/File:Woman%27s_shirt_from_Kutch,_Gujarat,_India,_IMA_55114,_2.jpg' },
+  },
+  gujaratEmbroidery: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Hanging_from_India%2C_Gujarat%2C_Kutch%2C_Honolulu_Museum_of_Art_2015-12-01.JPG/1920px-Hanging_from_India%2C_Gujarat%2C_Kutch%2C_Honolulu_Museum_of_Art_2015-12-01.JPG',
+    alt: 'An embroidered silk and metallic-thread hanging from Kutch, late 19th to early 20th century',
+    credit: { author: 'Hiart', license: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:Hanging_from_India,_Gujarat,_Kutch,_Honolulu_Museum_of_Art_2015-12-01.JPG' },
+  },
+  gujaratRoganArt: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Nirmuka_Rogan_Chhap.jpg/1920px-Nirmuka_Rogan_Chhap.jpg',
+    alt: 'A Rogan art Tree of Life with peacock motif, painted in castor-oil paint, Kutch',
+    credit: { author: 'AnaNodal', license: 'CC0', page: 'https://commons.wikimedia.org/wiki/File:Nirmuka_Rogan_Chhap.jpg' },
+  },
+  gujaratBhujodi: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Bhujodi_Handicraft_items.jpg/1920px-Bhujodi_Handicraft_items.jpg',
+    alt: 'Mirror-inlaid craft panels hung on a stone wall in a handicraft store at Bhujodi village, Kutch',
+    credit: { author: 'KartikMistry', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Bhujodi_Handicraft_items.jpg' },
+  },
+  gujaratRogan: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Rogan_painting.jpg/1920px-Rogan_painting.jpg',
+    alt: 'An artisan drawing a Rogan painting in castor-oil paint onto red cloth at Nirona, Kutch',
+    credit: { author: 'Rick Bradley', license: 'CC BY 2.0', page: 'https://commons.wikimedia.org/wiki/File:Rogan_painting.jpg' },
+  },
+  gujaratPatola: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/%27Patola%27_%28ritual_heirloom_cloth%29_from_Gujarat%2C_India%2C_late_18th_or_early_19th_century.jpg/1920px-%27Patola%27_%28ritual_heirloom_cloth%29_from_Gujarat%2C_India%2C_late_18th_or_early_19th_century.jpg',
+    alt: 'Detail of an antique Gujarati patola cloth woven in silk double ikat',
+    credit: { author: 'Unknown — Honolulu Academy of Arts', license: 'Public domain', page: 'https://commons.wikimedia.org/wiki/File:%27Patola%27_(ritual_heirloom_cloth)_from_Gujarat,_India,_late_18th_or_early_19th_century.jpg' },
+  },
+  gujaratBandhani: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Purple_and_green_bandhej.jpg/1920px-Purple_and_green_bandhej.jpg',
+    alt: 'Bandhani tie-dyed cloth in purple and green, showing the tiny resist-tied dots',
+    credit: { author: 'Soulful sunshine', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Purple_and_green_bandhej.jpg' },
+  },
+  gujaratMaldhari: {
+    src: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Maldhari_with_cattle%2C_Kutch%2C_Gujarat.jpg/1920px-Maldhari_with_cattle%2C_Kutch%2C_Gujarat.jpg',
+    alt: 'A Maldhari herder walking among long-horned cattle in dusty light, Kutch, Gujarat',
+    credit: { author: 'Drashokk', license: 'CC BY-SA 4.0', page: 'https://commons.wikimedia.org/wiki/File:Maldhari_with_cattle,_Kutch,_Gujarat.jpg' },
+  },
 } satisfies Record<string, Photo>;
 
 export type PhotoKey = keyof typeof photos;

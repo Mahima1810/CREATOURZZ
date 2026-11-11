@@ -179,7 +179,7 @@ export function SearchBar({
                     <span className="block truncate text-2xs text-ink-mute">
                       {isDestination
                         ? `Destination · ${hit.item.region}`
-                        : `${durationShort(hit.item.nights, hit.item.days)} · from ${inr(hit.item.pricePerPerson)}`}
+                        : `${durationShort(hit.item.nights, hit.item.days)} · from ${inr(hit.item.price)}`}
                     </span>
                   </span>
                   {index === active ? (
